@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 def run_instance(i):
     print(f"Starting stake.py instance {i}")
-    subprocess.run(["python", "stake.py"])
+    subprocess.run(["python3", "stake.py"])
     print(f"stake.py instance {i} finished")
 
 
