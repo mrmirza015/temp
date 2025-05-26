@@ -108,8 +108,8 @@ while True:
                 f"--window-size={device['width']},{device['height']}")
 
         try:
-            path = r"C:\WebDriver\bin\chromedriver.exe"
-            # path = "/usr/bin/chromedriver"
+            # path = r"C:\WebDriver\bin\chromedriver.exe"
+            path = "/usr/bin/chromedriver"
             service = Service(executable_path=path)
             driver = webdriver.Chrome(service=service, options=options)
             url = "https://adsonick.blogspot.com/2025/05/stakelink4.html"
