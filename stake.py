@@ -15,44 +15,50 @@ devices = [
 ]
 
 url = "https://adsonick.blogspot.com/2025/05/stakelink4.html"
+# url = 'https://adreliant.com/'
 
-for device in devices:
-    print(f"Opening as {device['name']}")
-    options = Options()
-    options.add_argument("--incognito")
-    options.add_argument("--disable-popup-blocking")
-    options.add_argument("--disable-notifications")
-    options.add_argument("--headless=new")
+while True:
+    for device in devices:
+        print(f"Opening as {device['name']}")
+        options = Options()
+        options.add_argument("--incognito")
+        options.add_argument("--disable-popup-blocking")
+        options.add_argument("--disable-notifications")
+        options.add_argument("--headless=new")
 
-    if device["mobile"]:
-        mobile_emulation = {
-            "deviceMetrics": {
-                "width": device["width"],
-                "height": device["height"],
-                "pixelRatio": 3.0
-            },
-            "userAgent": (
-                "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) "
-                "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 "
-                "Mobile/15E148 Safari/604.1"
-            )
-        }
-        options.add_experimental_option("mobileEmulation", mobile_emulation)
-    else:
-        options.add_argument(
-            f"--window-size={device['width']},{device['height']}")
+        if device["mobile"]:
+            mobile_emulation = {
+                "deviceMetrics": {
+                    "width": device["width"],
+                    "height": device["height"],
+                    "pixelRatio": 3.0
+                },
+                "userAgent": (
+                    "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) "
+                    "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 "
+                    "Mobile/15E148 Safari/604.1"
+                )
+            }
+            options.add_experimental_option(
+                "mobileEmulation", mobile_emulation)
+        else:
+            options.add_argument(
+                f"--window-size={device['width']},{device['height']}")
 
-    try:
-        # Ensure chromedriver path is correct
-        # path = r"C:\WebDriver\bin\chromedriver.exe"
-        path = "/usr/bin/chromedriver"
-        service = Service(executable_path=path)
-        driver = webdriver.Chrome(service=service, options=options)
-        driver.get(url)
-        print('wait for 4 seconds')
-        time.sleep(4)
-        driver.quit()
+        try:
+            # path = r"C:\WebDriver\bin\chromedriver.exe"
+            path = "/usr/bin/chromedriver"
+            service = Service(executable_path=path)
+            driver = webdriver.Chrome(service=service, options=options)
+            driver.get(url)
+            print('wait for 4 seconds')
+            time.sleep(4)
+            driver.quit()
 
-    except Exception as e:
-        print(f"Error: {e}")
-        os._exit(1)
+        except Exception as e:
+            print(f"Error: {e}")
+            os._exit(1)
+
+    # Optional delay between full cycles, e.g., 60 seconds
+    print("Cycle complete, waiting 60 seconds before next run...")
+    time.sleep(60)
