@@ -185,7 +185,7 @@ for device in devices:
 
    
 
-    service = Service("/usr/local/bin/chromedriver")  # or wherever chromedriver is installed
+    service = Service("/usr/bin/chromedriver")  # or wherever chromedriver is installed
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
