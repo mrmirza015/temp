@@ -177,6 +177,7 @@ for device in devices:
     options.add_argument("--disable-popup-blocking")
     options.add_argument("--disable-notifications")
     options.add_argument("--headless=new")
+    options.binary_location = "/usr/bin/google-chrome"
 
     if device["mobile"]:
         # Simulate mobile device
