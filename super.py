@@ -7,8 +7,8 @@ def main():
     while True:
         print("Launching runner.py...")
         subprocess.Popen(["python3", "runner.py"])
-        print("Waiting 150 seconds before launching the next runner.py...")
-        time.sleep(240)
+        print("Waiting 5 seconds before launching the next runner.py...")
+        time.sleep(5)
 
 
 if __name__ == "__main__":
