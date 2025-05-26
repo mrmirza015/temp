@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
+from selenium.webdriver.chrome.service import Service
 
 # here
 
@@ -181,8 +182,11 @@ for device in devices:
             f"--window-size={device['width']},{device['height']}")
 
     print(f"Opening as {device['name']}")
-    driver = webdriver.Chrome(
-        executable_path="/usr/local/bin/chromedriver", options=options)
+
+   
+
+    service = Service("/usr/local/bin/chromedriver")  # or wherever chromedriver is installed
+    driver = webdriver.Chrome(service=service, options=options)
 
     try:
         driver.get(url)
