@@ -112,7 +112,7 @@ while True:
             path = "/usr/bin/chromedriver"
             service = Service(executable_path=path)
             driver = webdriver.Chrome(service=service, options=options)
-            url = "https://adsonick.blogspot.com/2025/05/stakelink4.html"
+            url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
             # url = "https://adreliant.com/"
             driver.get(str(url))
             print('wait for 4 seconds')
