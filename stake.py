@@ -116,7 +116,14 @@ while True:
             path = "/usr/bin/chromedriver"
             service = Service(executable_path=path)
             driver = webdriver.Chrome(service=service, options=options)
-            url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
+            # url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
+            urls = [
+                 "https://cardhamaka.com/?utm_source=AdReliant&utm_medium=cpm",
+                 "https://hindinewsbox.com/?utm_source=AdReliant&utm_medium=cpm",
+                 "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
+            ]
+
+            url = random.choice(urls)
 
             driver.get(str(url))
             print('wait for 4 seconds')
