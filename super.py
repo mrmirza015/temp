@@ -481,7 +481,7 @@ def start_requests(iterations):
         response1 = request(ping1, headers=headers)
         content = response1.text
 
-        fields = extract_selected_fields(content)
+        fields = extract_selected_fields(str(content))
         # print(response)
         urls = get_urls(s=fields['s'], e=fields['e'],
                         bv=fields['bv'], r=fields['r'], isMobile=isMobile)
