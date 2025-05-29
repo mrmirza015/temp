@@ -20,8 +20,8 @@ dma = '0'
 tag_exp = '0'
 ul = 'en-us'
 dr = ''
-dl = 'https://adreliant.com/'
-dt = 'Adreliant'
+dl = 'https://example.com/'
+dt = 'example'
 
 uam_arr = [
     'SM-G955U']
@@ -113,18 +113,17 @@ while True:
             service = Service(executable_path=path)
             driver = webdriver.Chrome(service=service, options=options)
             url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
-            # url = "https://adreliant.com/"
+
             driver.get(str(url))
-            print('wait for 4 seconds')
+            print('wait for 2 seconds')
             time.sleep(2)
             url = generate_urls()
             requests.get(url=url['tracker'], headers=header)
             driver.quit()
 
         except Exception as e:
-            print(f"Error: {e}")
-            os._exit(1)
+            pass
 
     # Optional delay between full cycles, e.g., 60 seconds
-    print("Cycle complete, waiting 20 seconds before next run...")
+    print("Cycle complete, waiting 5 seconds before next run...")
     time.sleep(5)
