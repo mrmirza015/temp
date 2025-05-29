@@ -119,8 +119,8 @@ while True:
             url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
 
             driver.get(str(url))
-            print('wait for 2 seconds')
-            time.sleep(2)
+            print('wait for 4 seconds')
+            time.sleep(4)
             url = generate_urls()
             requests.get(url=url['tracker'], headers=header)
             driver.quit()
