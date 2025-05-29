@@ -481,15 +481,15 @@ def start_requests(iterations):
         content = response1.text
         print(content)
         encoding = response1.headers.get("Content-Encoding", "")
-        if encoding == "br":
-            content = brotli.decompress(response1.content)
-        elif encoding == "gzip":
-            content = gzip.decompress(response.content)
-        else:
-            content = response.content
+        # if encoding == "br":
+        #     content = brotli.decompress(response1.content)
+        # elif encoding == "gzip":
+        #     content = gzip.decompress(response.content)
+        # else:
+        #     content = response.content
 
-        text = content.decode("utf-8", errors="replace")
-        print(text[:1000])
+        # text = content.decode("utf-8", errors="replace")
+        # print(text[:1000])
 
         fields = extract_selected_fields(str(content))
         # print(response)
