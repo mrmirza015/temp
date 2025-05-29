@@ -486,11 +486,10 @@ def start_requests(iterations):
         elif encoding == "gzip":
             content = gzip.decompress(response.content)
         else:
-        content = response.content
-        print(text[:1000])
+            content = response.content
 
-text = content.decode("utf-8", errors="replace")
-print(text[:1000])
+        text = content.decode("utf-8", errors="replace")
+        print(text[:1000])
 
         fields = extract_selected_fields(str(content))
         # print(response)
