@@ -479,6 +479,10 @@ def start_requests(iterations):
         headers_ss = get_headers_ss(is_mobile=isMobile)
         # print(headers_ss)
         response1 = request(ping1, headers=headers)
+        print("Status Code:", response1.status_code)
+        print("Content-Type:", response1.headers.get("Content-Type"))
+        print("First 500 characters of response:\n", response1.text[:500])
+
         fields = extract_selected_fields(response1.text)
         # print(response)
         urls = get_urls(s=fields['s'], e=fields['e'],
