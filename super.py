@@ -480,6 +480,7 @@ def start_requests(iterations):
         # print(headers_ss)
         response1 = request(ping1, headers=headers)
         content = response1.text
+        print(content)
 
         fields = extract_selected_fields(str(content))
         # print(response)
