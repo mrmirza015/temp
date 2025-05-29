@@ -514,5 +514,5 @@ def start_requests(iterations):
         threading.Timer(i * 2, make_requests).start()
 
 
-start_requests(1)
+start_requests(1000)
 
