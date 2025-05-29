@@ -9,6 +9,7 @@ import re
 import threading
 import json
 import brotli
+import gzip
 
 
 # here
@@ -483,8 +484,7 @@ def start_requests(iterations):
         if encoding == "br":
             content = brotli.decompress(response1.content)
         elif encoding == "gzip":
-        import gzip
-        content = gzip.decompress(response.content)
+            content = gzip.decompress(response.content)
         else:
         content = response.content
         print(text[:1000])
