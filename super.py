@@ -8,9 +8,7 @@ import json
 import re
 import threading
 import json
-
-import json
-import re
+import brotli
 
 
 # here
@@ -481,6 +479,18 @@ def start_requests(iterations):
         response1 = request(ping1, headers=headers)
         content = response1.text
         print(content)
+        encoding = response1.headers.get("Content-Encoding", "")
+        if encoding == "br":
+            content = brotli.decompress(response1.content)
+        elif encoding == "gzip":
+        import gzip
+        content = gzip.decompress(response.content)
+        else:
+        content = response.content
+        print(text[:1000])
+
+text = content.decode("utf-8", errors="replace")
+print(text[:1000])
 
         fields = extract_selected_fields(str(content))
         # print(response)
