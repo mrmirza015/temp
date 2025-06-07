@@ -116,11 +116,8 @@ while True:
             path = "/usr/bin/chromedriver"
             service = Service(executable_path=path)
             driver = webdriver.Chrome(service=service, options=options)
-            # url = "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
             urls = [
-                 "https://cardhamaka.com/?utm_source=AdReliant&utm_medium=cpm",
-                 "https://hindinewsbox.com/?utm_source=AdReliant&utm_medium=cpm",
-                 "https://gamemoney.in/?utm_source=AdReliant&utm_medium=cpm"
+                "https://gamerpassion.space/?utm_source=adsonick&utm_medium=aamir",
             ]
 
             url = random.choice(urls)
