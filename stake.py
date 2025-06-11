@@ -124,7 +124,7 @@ while True:
 
             driver.get(str(url))
             print('wait for 4 seconds')
-            time.sleep(4)
+            time.sleep(8)
             url = generate_urls()
             requests.get(url=url['tracker'], headers=header)
             driver.quit()
