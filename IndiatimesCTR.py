@@ -28,7 +28,7 @@ for i in range(3):
     options.add_argument("--disable-gpu")
     options.add_argument("--remote-debugging-port=9222")
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     url = 'https://bharatfitguru.blogspot.com/p/ctr.html'
     driver.get(url)
     elem = driver.find_element(
